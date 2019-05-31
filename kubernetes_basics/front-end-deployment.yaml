@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    application: front-end
+  name: front-end
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        application: front-end
+    spec:
+      containers:
+      - image: weaveworksdemos/front-end:0.3.12
+        name: front-end
+        ports:
+        - containerPort: 8079
+        resources: {}
+      hostname: front-end
+      restartPolicy: Always
+status: {}
