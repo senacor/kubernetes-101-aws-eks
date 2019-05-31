@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    application: front-end
-  name: front-end
+    application: catalogue
+  name: catalogue
 spec:
   replicas: 1
   strategy: {}
@@ -12,32 +12,32 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        application: front-end
+        application: catalogue
     spec:
       containers:
-      - image: weaveworksdemos/front-end:0.3.12
-        name: front-end
+      - image: weaveworksdemos/catalogue:0.3.5
+        name: catalogue
         ports:
-        - containerPort: 8079
+        - containerPort: 80
         livenessProbe:
           exec:
             command:
             - wget
             - -O-
-            - http://localhost:8079
+            - http://localhost:80/health
           initialDelaySeconds: 60
           periodSeconds: 30
-          failureThreshold: 10
+          failureThreshold: 5
         readinessProbe:
           exec:
             command:
             - wget
             - -O-
-            - http://localhost:8079
+            - http://localhost:80/health
           initialDelaySeconds: 30
-          periodSeconds: 10
+          periodSeconds: 20
           failureThreshold: 10
         resources: {}
-      hostname: front-end
+      hostname: catalogue
       restartPolicy: Always
 status: {}
