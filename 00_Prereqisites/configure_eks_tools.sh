@@ -1,26 +1,35 @@
 #!/usr/bin/env bash
 
-echo "Create the default ~/.kube directory for storing kubectl configuration"
+echo "--"
+echo "--- Create the default ~/.kube directory for storing kubectl configuration"
+echo "--"
 
 mkdir -p ~/.kube >> install_tool.log
 
-echo "Install kubectl"
+echo "--"
+echo "--- Install kubectl"
+echo "--"
 
 sudo curl --silent --location -o /usr/local/bin/kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl >> install_tool.log
 
 sudo chmod +x /usr/local/bin/kubectl >> install_tool.log
 
-echo "Install AWS IAM Authenticator"
+echo "--"
+echo "--- Install AWS IAM Authenticator"
+echo "--"
 
-go get -u -v github.com/kubernetes-sigs/aws-iam-authenticator/cmd/aws-iam-authenticator >> install_tool.log
+go get -u github.com/kubernetes-sigs/aws-iam-authenticator/cmd/aws-iam-authenticator >> install_tool.log
 sudo mv ~/go/bin/aws-iam-authenticator /usr/local/bin/aws-iam-authenticator >> install_tool.log
 
-echo "Install JQ and envsubst"
+echo "--"
+echo "--- Install JQ and envsubst"
+echo "--"
 
 sudo yum -y install jq gettext >> install_tool.log
 
-
-echo "Verify the binaries are in the path and executable"
+echo "--"
+echo "--- Verify the binaries are in the path and executable"
+echo "--"
 
 for command in kubectl aws-iam-authenticator jq envsubst
   do
