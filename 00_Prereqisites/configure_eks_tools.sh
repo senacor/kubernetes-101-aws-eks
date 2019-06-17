@@ -28,6 +28,13 @@ echo "-"
 sudo yum -y install jq gettext >> install_tool.log
 
 echo "-"
+echo "--- Download eksctl bins"
+echo "-"
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+
+sudo mv -v /tmp/eksctl /usr/local/bin
+
+echo "-"
 echo "--- Verify the binaries are in the path and executable"
 echo "-"
 
