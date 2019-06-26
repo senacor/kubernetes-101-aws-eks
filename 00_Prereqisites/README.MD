@@ -119,9 +119,3 @@ Like this it should contain the role we added to the instance summercamp2019_eks
         "Arn": "arn:aws:sts::604370441254:assumed-role/summercamp2019_eks_101_workspaceadmin/i-05b78cb6a06e83234"
     }
     
-
-
-## Step 6 
-
-aws ec2 import-key-pair --key-name "eks_101" --public-key-material 
-file://~/.ssh/eks_101_rsa.pub
