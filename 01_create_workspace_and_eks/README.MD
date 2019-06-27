@@ -25,7 +25,7 @@ You can setup you cluster with this command, please make sure to use you
 individual shortname:
 
     
-    eksctl create cluster --name=<shortname>-summercamp-eksctl --nodes=2 --node-ami=auto --region=${AWS_REGION}
+    eksctl create cluster --name=<shortname>-summercamp-eksctl --nodes=2 --node-ami=auto --region=${AWS_REGION} --tags CostCenter=ACDDEV_CENT
 
 The cluster creation takes about 15 minutes. 
 

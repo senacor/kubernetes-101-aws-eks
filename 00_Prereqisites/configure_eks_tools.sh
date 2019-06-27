@@ -15,6 +15,16 @@ sudo curl --silent --location -o /usr/local/bin/kubectl https://amazon-eks.s3-us
 sudo chmod +x /usr/local/bin/kubectl >> install_tool.log
 
 echo "-"
+echo "--- Install kubectx (kubens)"
+echo "-"
+
+if [ ! -d /opt/kubectx ]; then
+  sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx >> install_tool.log
+  sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx >> install_tool.log
+  sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens >> install_tool.log
+fi
+
+echo "-"
 echo "--- Install AWS IAM Authenticator"
 echo "-"
 

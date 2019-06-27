@@ -22,9 +22,9 @@ Please use the default setting like:
 
 Now it will take a will till the Cloud9 Workspace will be create. 
 
-## Step 2 - Attache Workspace Policy
+## Step 2 - Attach Workspace Policy
 
-Meanwhile we have to attache the fitting role to the EC2 instances.
+Meanwhile we have to attach the fitting role to the EC2 instances.
 Therefore please navigate to the EC2 section. Here you will find you EC2
 instance which will be used as base for cloud9. Please Attache a EC2
 instance role to have the necessary rights for further actions with
