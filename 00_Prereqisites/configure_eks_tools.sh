@@ -28,8 +28,9 @@ echo "-"
 echo "--- Install AWS IAM Authenticator"
 echo "-"
 
-go get -u github.com/kubernetes-sigs/aws-iam-authenticator/cmd/aws-iam-authenticator >> install_tool.log
-sudo mv ~/go/bin/aws-iam-authenticator /usr/local/bin/aws-iam-authenticator >> install_tool.log
+curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/aws-iam-authenticator >> install_tool.log
+sudo mv aws-iam-authenticator /usr/local/bin >> install_tool.log
+sudo chmod 755 /usr/local/bin/aws-iam-authenticator
 
 echo "-"
 echo "--- Install JQ and envsubst"
