@@ -1,4 +1,4 @@
-# Prereqisits
+# Prerequisites
 
 In this first excise we will create a cloud9 workspace with all EKS
 tool.
