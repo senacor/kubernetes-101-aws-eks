@@ -24,7 +24,7 @@ Deploy the provided example files for the first part of the sock shop, the front
 
 ```
 kubectl apply -f front-end-deployment.yaml 
-kubectl apply -f front-end-service.yam
+kubectl apply -f front-end-service.yaml
 ```
 
 Get the status of the deployed application
